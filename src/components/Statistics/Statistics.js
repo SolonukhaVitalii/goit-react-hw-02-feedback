@@ -3,9 +3,27 @@ import s from './Statistics.module.css';
 //import PropTypes from 'prop-types';
 
 class Statistics extends React.Component {
-    handleIncrement = () => {
+    static defaultProps = {
 
-    }
+    };
+    static propTypes = {
+
+    };
+    state = {
+        good: 0,
+        neutral: 0,
+        bad: 0
+    };
+
+    handleIncrement = () => {
+        this.setState(prevState => {
+            return {
+                good: prevState.good +1,
+                neutral: prevState.neutral +1,
+                bad: prevState.bad +1,
+            }
+        });
+    };
     render() {
         return (
             <div>
@@ -32,9 +50,9 @@ class Statistics extends React.Component {
                 </div>
                 <h1>Statistics</h1>
                 <ul className={s.list}>
-                    <li>Good:</li>
-                    <li>Neutral:</li>
-                    <li>Bad:</li>
+                    <li>Good:{this.state.good}</li>
+                    <li>Neutral:{this.state.neutral}</li>
+                    <li>Bad:{this.state.bad}</li>
                 </ul>
             </div>
         );
