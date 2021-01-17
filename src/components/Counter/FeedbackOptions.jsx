@@ -1,30 +1,29 @@
 import React from 'react';
 import s from './Counter.module.css';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     const { good, neutral, bad } = options;
     return (
         <>
-            <h1>Please leave feadback</h1>
             <button className={s.button}
                 type="button"
                 name={good}
-                onClick={onLeaveFeedback}
+                onClick={() => onLeaveFeedback('good')}
                 >
                 Good
             </button>
                 <button className={s.button}
                 type="button"
                 name={neutral}
-                onClick={onLeaveFeedback}
+                onClick={() => onLeaveFeedback('neutral')}
                 >
                 Neutral
             </button>
             <button className={s.button}
                 type="button"
                 name={bad}
-                onClick={onLeaveFeedback}
+                onClick={() => onLeaveFeedback('bad')}
                 >
                 Bad
             </button>
@@ -33,7 +32,7 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 };
 
 FeedbackOptions.propTypes = {
-    
+    onLeaveFeedback: PropTypes.func.isRequired
 };
 
 export default FeedbackOptions;
