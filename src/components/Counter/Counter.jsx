@@ -1,9 +1,9 @@
 import React from 'react';
-import FeedbackOptions from './FeedbackOptions';
-import Statistics from './Statistics';
+import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
+import Statistics from '../Statistics/Statistics';
 import PropTypes from 'prop-types';
-import Section from './Section';
-import Notification from './Notification';
+import Section from '../Section/Section';
+import Notification from '../Notification/Notification';
 
 class Counter extends React.Component {
     static defaultProps = {

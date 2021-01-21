@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Counter.module.css';
+import s from './Statistics.module.css';
 
 const Statistics = ({good, neutral, bad, total, positivePercentage}) => {
     return (
